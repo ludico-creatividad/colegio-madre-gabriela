@@ -28,3 +28,4 @@ function stylesheetUri(){
 }
 
 add_image_size('newsFeed', 122, 128, true);
+add_image_size('fullSingle', 800, 360, true);

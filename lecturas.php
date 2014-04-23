@@ -5,25 +5,29 @@
 
 get_header(); ?>
     <section class="col-sm-9">
-        <article class="entry">
-            <figure class="entryFigure pull-left"><img src="<?php stylesheetUri(); ?>imgs/dummy.jpg"/></figure>
-            <h2 class="entryTitle">Noticia de prueba</h2><span class="entryDate">Abril 5 2014</span>
-
-            <p></p>
-            <a href="#" class="readMore">Leer
-                más</a></article>
-        <article class="entry">
-            <figure class="entryFigure pull-left"><img src="<?php stylesheetUri(); ?>imgs/dummy.jpg"/></figure>
-            <h2 class="entryTitle">Noticia de prueba</h2><span class="entryDate">Abril 5 2014</span>
-
-            <p></p><a href="#" class="readMore">Leer más</a></article>
-        <ul class="pageNavi nav">
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-        </ul>
+        <?php
+        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+        query_posts( array(
+            'post_type' => 'lectura',
+            'posts_per_page' => '2',
+            'paged' => $paged
+        ));
+        if(have_posts()):
+            while(have_posts()): the_post();
+                echo '<article class="entry">';
+                echo '<figure class="entryFigure pull-left">';
+                echo get_the_post_thumbnail(get_the_ID(), 'newsFeed');
+                echo '</figure>';
+                echo '<a href="' . get_permalink() . '">';
+                echo '<h2 class="entryTitle">' . get_the_title() . '</h2><span class="entryDate">Abril 5 2014</span>';
+                echo '</a>';
+                the_excerpt();
+                echo '<a href="' . get_permalink() . '" class="readMore">Leer más</a>';
+                echo '</article>';
+            endwhile;
+        endif;
+        wp_pagenavi();
+        ?>
     </section>
     <aside class="col-sm-3">
         <div class="sidebar-module"><h4>Categorias</h4>
