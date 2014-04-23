@@ -6,14 +6,14 @@
 get_header(); ?>
     <section class="col-sm-9">
         <article class="entry">
-            <figure class="entryFigure pull-left"><img src="imgs/dummy.jpg"/></figure>
+            <figure class="entryFigure pull-left"><img src="<?php stylesheetUri(); ?>imgs/dummy.jpg"/></figure>
             <h2 class="entryTitle">Noticia de prueba</h2><span class="entryDate">Abril 5 2014</span>
 
             <p></p>
             <a href="#" class="readMore">Leer
                 más</a></article>
         <article class="entry">
-            <figure class="entryFigure pull-left"><img src="imgs/dummy.jpg"/></figure>
+            <figure class="entryFigure pull-left"><img src="<?php stylesheetUri(); ?>imgs/dummy.jpg"/></figure>
             <h2 class="entryTitle">Noticia de prueba</h2><span class="entryDate">Abril 5 2014</span>
 
             <p></p><a href="#" class="readMore">Leer más</a></article>
