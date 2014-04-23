@@ -26,3 +26,5 @@ function getStylesheetUri(){
 function stylesheetUri(){
     echo getStylesheetUri();
 }
+
+add_image_size('newsFeed', 122, 128, true);

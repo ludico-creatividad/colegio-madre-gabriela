@@ -7,7 +7,9 @@
 
             while(have_posts()): the_post();
                 echo '<article class="entry">';
-                    echo '<figure class="entryFigure pull-left"><img src="' . getStylesheetUri() . 'imgs/dummy.jpg"/></figure>';
+                    echo '<figure class="entryFigure pull-left">';
+                       echo get_the_post_thumbnail(get_the_ID(), 'newsFeed');
+                    echo '</figure>';
                     echo '<h2 class="entryTitle">' . get_the_title() . '</h2><span class="entryDate">Abril 5 2014</span>';
                     the_excerpt();
                     echo '<a href="' . get_permalink() . '" class="readMore">Leer más</a>';

@@ -63,9 +63,9 @@ body {
     padding: 20px;
 }
 .entryFigure {
-    width: 14%;
-    max-width: 150px;
-    max-height: 100%;
+    width: 122px;
+    height: 128px;
+    max-width: 14%;
     margin-right: 2%;
 }
 .entryFigure img {
