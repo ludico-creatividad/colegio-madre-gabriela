@@ -24,7 +24,7 @@ body {
     margin-top: 60px;
 }
 .entry,
-.fullEntry {
+.fullEntry, .contentBlock {
     width: 100%;
     height: 170px;
     padding: 20px 35px;
@@ -39,7 +39,7 @@ body {
     box-shadow: 0 2px 0 #d7dada;
     color: #646464;
 }
-.fullEntry {
+.fullEntry, .contentBlock {
     min-height: 400px;
     height: auto;
 }
