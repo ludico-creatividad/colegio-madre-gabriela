@@ -4,7 +4,34 @@
  * */
 
 get_header(); ?>
-    <div class="slider"></div>
+    <div id="mainSlider" class="sliderViewport">
+        <!-- Left-Right buttons to navigate back and forward in the slider-->
+        <div class="sliderBtn prevBtn"><i class="fa fa-angle-left"></i></div>
+        <div class="sliderBtn nextBtn"><i class="fa fa-angle-right"></i></div>
+        <!-- Main slider-->
+        <ul class="slider">
+            <?php
+            query_posts(array('post_type' => 'galeria', 'name' => 'slider-inicio'));
+            while(have_posts()):
+                if(have_posts()): the_post();
+                    $content = get_the_content();
+                    preg_match('/\[gallery ids="(.*)"\]/', $content, $match);
+                    $galleryIds = $match[1]; // String
+                    $gallery = getGalleryThumbsArr($galleryIds, 'mainSlider');
+                    if(!empty($gallery)){
+                        foreach($gallery as $img){
+                            echo '<li>';
+                            echo '<img src="' . $img .'" class="sliderImg"/>';
+                            echo '</li>';
+                        }
+                    }
+                endif;
+            endwhile;
+            wp_reset_query();
+            ?>
+        </ul>
+    </div>
+
     <section>
         <?php
         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
@@ -15,16 +42,7 @@ get_header(); ?>
         ));
         if(have_posts()):
             while(have_posts()): the_post();
-                echo '<article class="entry">';
-                    echo '<figure class="entryFigure pull-left">';
-                       echo get_the_post_thumbnail(get_the_ID(), 'newsFeed');
-                    echo '</figure>';
-                    echo '<a href="' . get_permalink() . '">';
-                        echo '<h2 class="entryTitle">' . get_the_title() . '</h2><span class="entryDate">Abril 5 2014</span>';
-                    echo '</a>';
-                    the_excerpt();
-                    echo '<a href="' . get_permalink() . '" class="readMore">Leer más</a>';
-                echo '</article>';
+                include('templates/feed-entry.php');
             endwhile;
         endif;
         wp_pagenavi();

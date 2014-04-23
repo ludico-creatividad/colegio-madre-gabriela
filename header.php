@@ -5,6 +5,7 @@
     <title>Colegio Madre Gabriela de San Martin</title>
     <link rel="stylesheet" href="<?php stylesheetUri(); ?>css/reset.css"/>
     <link rel="stylesheet" href="<?php stylesheetUri(); ?>css/bootstrap.css"/>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css" type="text/css"/>
     <link rel="stylesheet" href="<?php stylesheetUri(); ?>style.css"/>
     <?php wp_head(); ?>
 </head>

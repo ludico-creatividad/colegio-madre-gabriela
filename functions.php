@@ -27,5 +27,19 @@ function stylesheetUri(){
     echo getStylesheetUri();
 }
 
+function getGalleryThumbsArr($galleryIdString, $thumbSize = 'small') {
+
+    if ($galleryIdString == '') return false;
+
+    $idsArr = explode(',', $galleryIdString);
+    $galleryArr = array();
+
+    foreach ($idsArr as $id) {
+        $galleryArr[] = array_shift(wp_get_attachment_image_src($id, $thumbSize));
+    }
+    return $galleryArr;
+}
+
+add_image_size('mainSlider', 940, 270, true);
 add_image_size('newsFeed', 122, 128, true);
 add_image_size('fullSingle', 800, 360, true);
