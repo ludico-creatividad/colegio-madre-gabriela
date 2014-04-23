@@ -1,0 +1,191 @@
+/*
+Theme Name: Colegio Madre Gabriela
+Description: Tema desarrollado para el colegio Madre GAbriela en el año 2014
+*/
+
+body {
+    font-size: 14px;
+    background-color: #f0f3f6;
+}
+.header {
+    padding-top: 17px;
+    overflow: hidden;
+}
+#mainLogo {
+    height: 145px;
+}
+#mainLogo img {
+    height: 100%;
+}
+#mainLogo figcaption {
+    display: none;
+}
+.nav {
+    margin-top: 60px;
+}
+.slider {
+    width: 100%;
+    height: 270px;
+    margin: 17px 0;
+    background-color: #646464;
+}
+.entry,
+.fullEntry {
+    width: 100%;
+    height: 170px;
+    padding: 20px 35px;
+    margin: 14px 0;
+    overflow: hidden;
+    background-color: #fff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+    box-shadow: 0 2px 0 #d7dada;
+    color: #646464;
+}
+.fullEntry {
+    min-height: 400px;
+    height: auto;
+}
+.fullEntryFigure {
+    display: block;
+    max-height: 300px;
+    clear: both;
+    overflow: hidden;
+}
+.fullEntryFigure img {
+    display: block;
+    margin: auto;
+    max-width: 90%;
+    max-height: 120%;
+    padding: 20px;
+}
+.entryFigure {
+    width: 14%;
+    max-width: 150px;
+    max-height: 100%;
+    margin-right: 2%;
+}
+.entryFigure img {
+    width: 100%;
+    max-height: 100%;
+}
+.entryTitle {
+    margin: 0;
+    float: left;
+}
+.entryDate {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: bold;
+    float: right;
+}
+.entry p,
+.fullEntry p {
+    width: 84%;
+    float: left;
+    height: 60px;
+    margin: 4px 0;
+    overflow: hidden;
+    text-align: justify;
+}
+.fullEntry p {
+    width: 100%;
+    height: auto;
+    line-height: 24px;
+    font-size: 15px;
+}
+.readMore {
+    float: left;
+    color: #fff;
+    background-color: #428bca;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+    -ms-border-radius: 4px;
+    border-radius: 4px;
+    padding: 3 8;
+}
+.readMore:hover {
+    background-color: #40739e;
+    color: #fff;
+    text-decoration: none;
+}
+.pageNavi {
+    text-align: center;
+    margin: 30px 0;
+}
+.pageNavi li {
+    display: inline-block;
+    margin: 0 3px;
+}
+.pageNavi a {
+    padding: 9px;
+    background-color: #dadada;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+    -ms-border-radius: 4px;
+    border-radius: 4px;
+}
+/*  Lectures Styles */
+.sideCat {
+    display: block;
+    width: 100%;
+    padding: 6 8;
+    -webkit-border-top-left-radius: 4px;
+    -moz-border-top-left-radius: 4px;
+    -o-border-top-left-radius: 4px;
+    -ms-border-top-left-radius: 4px;
+    border-top-left-radius: 4px;
+    -webkit-border-top-right-radius: 4px;
+    -moz-border-top-right-radius: 4px;
+    -o-border-top-right-radius: 4px;
+    -ms-border-top-right-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom: 1px solid #d7dada;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: underline;
+    color: #428bca;
+}
+.sideCat:hover {
+    background-color: #40739e;
+    color: #fff;
+    text-decoration: none;
+}
+.sideCatDesc {
+    margin: 4px 0 20px;
+    padding: 4px 26px 11px;
+    font-size: 12px;
+    text-align: justify;
+    color: #646464;
+}
+/* SideBar Styles */
+.sidebar-module h4 {
+    background-color: #dde2e8;
+    padding: 10px;
+    -webkit-border-top-left-radius: 5px;
+    -moz-border-top-left-radius: 5px;
+    -o-border-top-left-radius: 5px;
+    -ms-border-top-left-radius: 5px;
+    border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-top-right-radius: 5px;
+    -o-border-top-right-radius: 5px;
+    -ms-border-top-right-radius: 5px;
+    border-top-right-radius: 5px;
+    text-align: center;
+}
+.sidebar-module li {
+    background-color: #fff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+    box-shadow: 0 2px 0 #d7dada;
+}
