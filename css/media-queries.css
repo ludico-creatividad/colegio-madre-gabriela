@@ -1,0 +1,39 @@
+/************************************************************************************
+smaller than 768
+*************************************************************************************/
+@media screen and (max-width: 768px) {
+    /*single*/
+    /*--------------------------------*/
+
+    .fullEntry div.title{
+        width: 100%;
+    }
+
+    .fullEntryFigure{
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .fullEntryFigure img{
+        max-width: 350px;
+        display: block;
+        margin: 20px auto;
+    }
+
+    /*--------------------------------*/
+
+
+}
+
+@media (min-width: 1350px) {
+    .container {
+        width: 1316px;
+    }
+}
+
+@media (min-width: 1526px) {
+    .container {
+        width: 1487px;
+    }
+}

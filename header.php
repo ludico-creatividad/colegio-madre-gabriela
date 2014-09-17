@@ -1,25 +1,24 @@
 <!DOCTYPE html5>
 <html>
-<head>
+<head><title>Colegio Madre Gabriela de San Martin</title>
     <meta charset="utf-8"/>
-    <title>Colegio Madre Gabriela de San Martin</title>
-    <link rel="stylesheet" href="<?php stylesheetUri(); ?>css/reset.css"/>
-    <link rel="stylesheet" href="<?php stylesheetUri(); ?>css/bootstrap.css"/>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css" type="text/css"/>
-    <link rel="stylesheet" href="<?php stylesheetUri(); ?>style.css"/>
+    <?php require_once('styles-loader.php'); ?>
     <?php wp_head(); ?>
 </head>
 <body>
 <div class="container">
     <header class="header">
-        <figure id="mainLogo" class="pull-left"><img src="<?php stylesheetUri(); ?>imgs/logo.png"/>
+        <figure id="mainLogo" class="pull-left"><img src="<?php stylesheetUri(); ?>imgs/logo_menu.png"/>
             <figcaption>Colegio Madre Gabriela</figcaption>
         </figure>
+    </header>
+    <div id="pestanas">
         <?php
         $menuConf = array(
             'theme_location' => 'mainMenu',
-            'menu_class' => 'nav nav-pills pull-right'
         );
         wp_nav_menu($menuConf);
         ?>
-    </header>
+        <a href="<?= get_bloginfo('home'); ?>/contacto" class="iframe cboxElement" id="contacto">Contactános</a>
+    </div>
+</div>

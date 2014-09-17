@@ -27,6 +27,41 @@ function stylesheetUri(){
     echo getStylesheetUri();
 }
 
+function getThumbUrlArr($thumbnailSize = 'small') {
+    $thumbId = get_post_thumbnail_id();
+    $thumbUrl = wp_get_attachment_image_src($thumbId, $thumbnailSize, true);
+    return $thumbUrl;
+}
+
+function getThumbUrl($thumbnailSize = 'small') {
+    $thumbUrl = getThumbUrlArr($thumbnailSize);
+    return $thumbUrl[0];
+}
+
+function getGalIdsFromContent() {
+    $content = get_the_content();
+    preg_match('/\[gallery ids="(.*)"\]/', $content, $match);
+    return $match[1];
+}
+
+/**
+ * Searches for a gallery shortCode in the wordpress content, it stores its ids in a key of the array returned
+ * and also returns the original content string with the shortcode from the gallery removed
+ * @return array
+ */
+function splitGalFromContent() {
+    $content = get_the_content();
+    preg_match('/\[gallery ids="(.*)"\]/', $content, $match);
+    $content = str_replace($match[0], '', $content);
+    $content = apply_filters('the_content', $content);
+    $galleryIds = $match[1]; // String
+
+    return array(
+        'galleryIds' => $galleryIds,
+        'content' => $content
+    );
+}
+
 function getGalleryThumbsArr($galleryIdString, $thumbSize = 'small') {
 
     if ($galleryIdString == '') return false;
@@ -84,6 +119,6 @@ function sanitize($imput, $mode  = "txt"){
     }
 }
 
-add_image_size('mainSlider', 940, 270, true);
-add_image_size('newsFeed', 122, 128, true);
+add_image_size('mainSlider', 1140, 475, true);
+add_image_size('newsFeed', 217, 217, true);
 add_image_size('fullSingle', 800, 360, true);

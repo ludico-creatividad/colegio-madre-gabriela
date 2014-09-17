@@ -4,40 +4,16 @@
  * */
 
 get_header(); ?>
-    <div id="mainSlider" class="sliderViewport">
-        <!-- Left-Right buttons to navigate back and forward in the slider-->
-        <div class="sliderBtn prevBtn"><i class="fa fa-angle-left"></i></div>
-        <div class="sliderBtn nextBtn"><i class="fa fa-angle-right"></i></div>
-        <!-- Main slider-->
-        <ul class="slider">
-            <?php
-            query_posts(array('post_type' => 'galeria', 'name' => 'slider-inicio'));
-            while(have_posts()):
-                if(have_posts()): the_post();
-                    $content = get_the_content();
-                    preg_match('/\[gallery ids="(.*)"\]/', $content, $match);
-                    $galleryIds = $match[1]; // String
-                    $gallery = getGalleryThumbsArr($galleryIds, 'mainSlider');
-                    if(!empty($gallery)){
-                        foreach($gallery as $img){
-                            echo '<li>';
-                            echo '<img src="' . $img .'" class="sliderImg"/>';
-                            echo '</li>';
-                        }
-                    }
-                endif;
-            endwhile;
-            wp_reset_query();
-            ?>
-        </ul>
-    </div>
-
-    <section>
+<div class="container">
+<?php include_once('slider.php'); ?>
+    <main class="micontainer">
+    <section class="col-lg-12 cpestana1"><h4>Noticias</h4>
+        <div class="triangleDown noticiasTriangle"></div>
         <?php
         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
         query_posts( array(
             'post_type' => 'post',
-            'posts_per_page' => '2',
+            'posts_per_page' => '3',
             'paged' => $paged
         ));
         if(have_posts()):
@@ -45,7 +21,11 @@ get_header(); ?>
                 include('templates/feed-entry.php');
             endwhile;
         endif;
-        wp_pagenavi();
+        echo '<div>';
+            wp_pagenavi();
+        echo '</div>';
         ?>
-
+    </section>
+    </main>
+</div>
 <?php get_footer(); ?>
