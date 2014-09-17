@@ -122,3 +122,38 @@ function sanitize($imput, $mode  = "txt"){
 add_image_size('mainSlider', 1140, 475, true);
 add_image_size('newsFeed', 217, 217, true);
 add_image_size('fullSingle', 800, 360, true);
+
+add_action('init', 'cptui_register_my_cpt_lecturas');
+function cptui_register_my_cpt_lecturas() {
+    register_post_type('lectures', array(
+        'label' => 'Lecturas',
+        'description' => '',
+        'public' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'capability_type' => 'post',
+        'map_meta_cap' => true,
+        'hierarchical' => true,
+        'rewrite' => array('slug' => 'lecturas', 'with_front' => true, 'hierarchical' => true),
+        'query_var' => true,
+        'menu_position' => '6',
+        'supports' => array('title','editor','excerpt','trackbacks','custom-fields','comments','thumbnail','author','page-attributes','post-formats'),
+        'taxonomies' => array('seccion'),
+        'labels' => array (
+            'name' => 'Lecturas',
+            'singular_name' => 'Lectura',
+            'menu_name' => 'Lecturas',
+            'add_new' => 'Add Lectura',
+            'add_new_item' => 'Add New Lectura',
+            'edit' => 'Edit',
+            'edit_item' => 'Edit Lectura',
+            'new_item' => 'New Lectura',
+            'view' => 'View Lectura',
+            'view_item' => 'View Lectura',
+            'search_items' => 'Search Lecturas',
+            'not_found' => 'No Lecturas Found',
+            'not_found_in_trash' => 'No Lecturas Found in Trash',
+            'parent' => 'Parent Lectura',
+        )
+    ) ); }
+

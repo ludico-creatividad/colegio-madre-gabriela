@@ -1,18 +1,10 @@
 <?php
-get_header(); ?>
-    <section class="col-sm-9">
-        <?php
-        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+$catDescription = "Se plantea una formación integral a través de los procesos
+educativos, de
+manera tal, que sean capaces de responder de manera critica a los desafíos
+históricos, sociales y culturales de la sociedad en que se encuentran inmersos,
+con el fin de modificar determinadas actitudes negativas que nos hagan ser mas
+solidarios y mas humanos.";
+include('templates/secciones-template.php');
 
-        if(have_posts()):
-            while(have_posts()): the_post();
-                include('templates/feed-entry.php');
-            endwhile;
-        endif;
-        wp_pagenavi();
-        ?>
-    </section>
-    <aside class="col-sm-3">
-        <?php include('lecturas-sidebar.php'); ?>
-    </aside>
-<?php get_footer(); ?>
+

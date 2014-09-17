@@ -4,7 +4,7 @@ $(document).ready(function() {
     var $tabsCategories = $("#tabs-categories");
     var $tabsCategories_li = $tabsCategories.find("li");
     $tabsCategories_li.click(function(e){
-        e.preventDefault();
+        //e.preventDefault();
         $tabsCategories_li.removeClass("active");
         $( this ).addClass("active");
     });
@@ -64,7 +64,7 @@ $(document).ready(function() {
     var categories_div = categories.find("> div");
     var lecturasSection = $("#lecturas-section");
     categories_li.click(function(e){
-        e.preventDefault();
+        //e.preventDefault();
         categories_li.removeClass("active");
         $( this ).addClass("active");
         clr_backgr = $(this).css("background-color");

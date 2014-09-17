@@ -14,7 +14,7 @@
     <body>
     <div class="container">
         <header class="headerContacto">
-            <figure id="mainLogo" class="pull-left"><img src="imgs/logo_menu.png"/>
+            <figure id="mainLogo" class="pull-left"><img src="<?php stylesheetUri(); ?>imgs/logo_menu.png"/>
                 <figcaption>Colegio Madre Gabriela</figcaption>
             </figure>
         </header>
